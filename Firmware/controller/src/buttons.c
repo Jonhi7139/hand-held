@@ -1,22 +1,30 @@
 #include "buttons.h"
+#include "board.h"
+
 #include "driver/gpio.h"
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-//Deifines//
-#define PIN_UP 32
-#define PIN_LEFT 13
-#define PIN_RIGHT 33
-#define PIN_DOWN 14
-
 #define BTN_PRESSED 0
 #define BTN_RELEASED 1
+
+//creates the struct
+struct button
+{
+    int pin;
+    int state_now;
+    int last_state;
+    const char *name;
+
+};
 
 //Declare private functions
 static void config(struct button *b, int count);
 
 static void read_buttons(struct button *b, int count);
+
+
 
 
 //Components initialization
@@ -25,7 +33,8 @@ static struct button buttons[]=
     {.pin = PIN_UP, .state_now = BTN_RELEASED, .last_state = BTN_RELEASED, .name = "up"},
     {.pin = PIN_DOWN, .state_now = BTN_RELEASED, .last_state = BTN_RELEASED, .name = "down"},
     {.pin = PIN_LEFT, .state_now = BTN_RELEASED, .last_state = BTN_RELEASED, .name = "left"},
-    {.pin = PIN_RIGHT, .state_now = BTN_RELEASED, .last_state = BTN_RELEASED, .name = "right"},   
+    {.pin = PIN_RIGHT, .state_now = BTN_RELEASED, .last_state = BTN_RELEASED, .name = "right"}, 
+    {.pin = PIN_BSTICK, .state_now = BTN_RELEASED, .last_state = BTN_RELEASED, .name = "L3"},  
 };
 static int Num_Buttons = (sizeof(buttons)/sizeof(buttons[0]));
 
