@@ -1,6 +1,6 @@
 # Hand-held
  
-A DIY handheld game console built around a **Raspberry Pi 5**, with a custom **ESP32 controller** .The firmware is being written in C with ESP-IDF and FreeRTOS. The long-term goal is a handheld that is fully my own, from the controller firmware to a custom PCB.
+A DIY handheld game console built around a **Raspberry Pi 5**, with a custom **ESP32 controller**. The firmware is being written in C with ESP-IDF and FreeRTOS. The long-term goal is a handheld that is fully my own, from the controller firmware to a custom PCB.
 
 
 > **Status:** in progress:
