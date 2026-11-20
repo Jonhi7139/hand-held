@@ -3,8 +3,8 @@
 A DIY handheld game console built around a **Raspberry Pi 5**, with a custom **ESP32 controller**. The firmware is being written in C with ESP-IDF and FreeRTOS. The long-term goal is a handheld that is fully my own, from the controller firmware to a custom PCB.
 
 
-> **Status:** in progress:
->   The firmware has the D-pad configured and an analog stick with its built in button. For now Debugging is being made over prints in the terminal
+> **Status:** in progress.
+>   The firmware has the D-pad configured and an analog stick with its built in button. For now debugging is being made over prints in the terminal
 
 ## Architecture
  
@@ -16,9 +16,8 @@ The ESP32 handles all the input and, later, the power and battery management. Th
 
 ## Controller firmware
  
-Code in [`Firmware/controller`]
+Code in [`Firmware/controller`](Firmware/controller), built with PlatformIO on the ESP-IDF framework for an ESP32 DevKit.
 
-(Firmware/controller), built with PlatformIO on the ESP-IDF framework for an ESP32 DevKit.
 | File | What it does |
 |---|---|
 | `board.h` | All pin assignments in one place |
